@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta-print</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        #mainNav {
+            background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 230, 118, 1) 100%);
+            /* 渐变背景颜色: 蓝色到绿色 */
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-light .navbar-brand,
+        .navbar-light .nav-link {
+            color: #ffffff !important;
+            /* 白色文字 */
+        }
+
+        .navbar-light .nav-link {
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-light .nav-link:hover {
+            color: #ffd700 !important;
+            /* 鼠标悬停时的颜色 */
+        }
+
+        .navbar-light .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+            /* 调整按钮边框颜色 */
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .bg-lightblue {
+            background-color: rgb(0, 188, 230) !important;
+            /* 浅蓝色背景 */
+        }
+
+        .btn-show-balance {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 2rem;
+        }
+
+        .btn-show-balance:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+
+        .balance-display {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .text-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function showBalance() {
+            var balance = "$1234.56"; // 示例余额
+            document.getElementById('balance').textContent = "Account Balance: " + balance;
+        }
+    </script>
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">Meta-print</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Buy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup">Sell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup">Connect Wallet</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">NFT ON SELL</h1>
+                <p class="lead fw-normal text-white-50 mb-0">"Unlock Your Creativity—Own Exclusive 3D Print Designs as
+                    NFTs Today!"</p>
+                <button class="btn-show-balance" onclick="showBalance()">Show Balance</button>
+                <div id="balance" class="balance-display"></div>
+            </div>
+        </div>
+    </header>
+    <!-- 其他内容 -->
+</body>
+
+</html>

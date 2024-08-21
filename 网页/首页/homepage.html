@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Meta-print</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+<link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="css/styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMqawH/1OBztoPRBxAMiIL89avWyp7YfRWvJ2Or" crossorigin="anonymous">
+
+<!-- Other head content -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p+pbmPbYxM1q7rKfu8fz5v4+3BSB2KJeWEchxgVKB6F7dOEx0d/7NY0YcDA5a6+m71ZUpgP6L7Pp5jz6cGL7Qg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    .masthead {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .masthead::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        /* 使覆盖层完全透明 */
+        z-index: -1;
+    }
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(1.0);
+        /* 增加视频亮度 */
+    }
+
+    .cropped-image {
+        width: 100%;
+        /* 设置图片的宽度 */
+        height: 200px;
+        /* 设置图片的高度 */
+        object-fit: cover;
+        /* 保持图片的宽高比并裁剪图片以填充容器 */
+        object-position: center;
+        /* 聚焦显示图片的中间部分 */
+    }
+
+    .about-section {
+        background-image: url('assets/img/ipad1.jpg');
+        /* 设置背景图片路径 */
+        background-size: cover;
+        /* 使背景图片覆盖整个区域 */
+        background-position: center;
+        /* 确保背景图片居中 */
+        background-repeat: no-repeat;
+        /* 避免背景图片重复 */
+        color: white;
+        /* 确保文字在图片上可见 */
+        padding: 120px 0;
+        /* 设置上下内边距，使内容有足够的间距 */
+    }
+
+
+
+    .gradient-bar {
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(to right, #007AFF, #4CD964, #FFCC00, #FF3B30);
+        /* 使用更鲜艳的颜色 */
+        border-top: 1px solid #222;
+        /* 顶部边框颜色加深 */
+        border-bottom: 1px solid #222;
+        /* 底部边框颜色加深 */
+    }
+
+    .overlay-box {
+        background-color: rgba(0, 0, 0, 0.7);
+        /* 半透明黑色背景 */
+        padding: 40px;
+        /* 增加内边距，控制框的大小 */
+        border-radius: 8px;
+        /* 圆角 */
+        color: #fff;
+        /* 白色文字，确保在黑色背景上可见 */
+        max-width: 1400px;
+        /* 增加框的最大宽度，调整为1400px或你需要的值 */
+        margin: 0 auto;
+        /* 居中对齐 */
+    }
+
+    .background-section {
+        background-image: url('assets/img/2.jpg');
+        /* 替换为你的图片路径 */
+        background-size: cover;
+        /* 使背景图片覆盖整个容器 */
+        background-position: center -80px;
+        /* 背景图片从顶部开始显示 */
+        background-repeat: no-repeat;
+        /* 防止图片重复 */
+        height: 100vh;
+        /* 确保背景填满整个容器高度 */
+        display: flex;
+        flex-direction: column;
+        /* 垂直布局 */
+        justify-content: center;
+        /* 垂直居中对齐 */
+        align-items: center;
+        /* 水平居中对齐 */
+        padding: 20px;
+        box-sizing: border-box;
+        /* 包含内边距在高度计算中 */
+    }
+
+    .main-title {
+        font-size: 36px;
+        color: #fff;
+        /* 标题使用白色，与背景形成对比 */
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* 添加阴影效果让标题更突出 */
+        width: 100%;
+        /* 确保标题占据整个宽度以便居中 */
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        /* 调整容器宽度，根据需要修改 */
+        margin-top: 330px;
+        /* 让内容与标题之间有更多间距，框子往下移动 */
+    }
+
+    .panel {
+        background-color: rgba(0, 0, 0, 0.8);
+        /* 黑色半透明背景，确保内容可见 */
+        padding: 30px;
+        width: 45%;
+        /* 设定每个 div 的宽度 */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        /* 添加更明显的阴影效果 */
+        border-radius: 12px;
+        /* 更大的圆角边框 */
+        text-align: center;
+        /* 让文本居中 */
+    }
+
+    .panel h2 {
+        font-size: 24px;
+        color: #fff;
+        /* 标题使用白色，与黑色背景形成对比 */
+        margin-bottom: 20px;
+    }
+
+    .panel p {
+        font-size: 16px;
+        color: #ccc;
+        /* 浅灰色文本，与黑色背景形成对比 */
+        line-height: 1.6;
+    }
+
+    .btn-custom {
+        padding: 15px 30px;
+        /* 内边距，按钮更大 */
+        font-size: 1.5rem;
+        /* 字体大小 */
+        border-radius: 8px;
+        /* 方形按钮带有轻微圆角 */
+        background: linear-gradient(90deg, #4CAF50, #1E90FF);
+        /* 绿色到蓝色的渐变 */
+        border: none;
+        /* 去掉边框 */
+        color: white;
+        /* 字体颜色 */
+        font-weight: bold;
+        /* 加粗字体 */
+        text-transform: uppercase;
+        /* 字母大写 */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        /* 阴影效果 */
+        transition: all 0.3s ease;
+        /* 平滑的过渡效果 */
+    }
+
+    .btn-custom:hover {
+        background: linear-gradient(90deg, #3e8e41, #007acc);
+        /* 悬停时更深的渐变 */
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        /* 加深阴影效果 */
+        transform: translateY(-2px);
+        /* 悬停时上移 */
+    }
+</style>
+</style>
+
+<body1 id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">
+                <img src='assets/img/1.svg' alt="Logo" style="height: 30px; margin-right: 10px;">
+
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about" style="font-weight: 700;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" style="font-weight: 700;">Buy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup" style="font-weight: 700;">Sell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup" style="font-weight: 700;">Connect Wallet</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <video class="video-background" autoplay loop muted>
+            <source src="1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h1 class="mx-auto my-0 text-uppercase" style="font-size: 8rem;">Meta print</h1>
+                    <br>
+
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5" style="
+                        background: linear-gradient(to right, rgba(0, 123, 255, 0.8), rgba(40, 167, 69, 0.8), rgba(255, 193, 7, 0.8)); /* 从蓝色到绿色再到黄色的渐变 */
+                        padding: 20px 40px; /* 增加内边距 */
+                        border-radius: 25px; /* 圆角边框 */
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 柔和的阴影效果 */
+                        backdrop-filter: blur(10px); /* 增加模糊效果 */
+                        max-width: 80%; /* 限制盒子宽度 */
+                        margin: 0 auto; /* 居中对齐 */
+                        color: #ffffff; /* 白色文字 */
+                        font-size: 1.5rem; /* 字体大小 */
+                        text-align: center; /* 居中文本 */
+                    ">
+                        Transforms 3D data into NFTs and physical artworks
+                        through 3D printing, merging digital and physical art for innovative
+                        expression and interaction.
+                    </h2>
+                    <br>
+                    <br>
+
+                    <a class="btn btn-primary btn-custom" href="#about" style="margin-right: 200px;">Buy NFT</a>
+                    <a class="btn btn-primary btn-custom" href="#about" style="margin-left: 200px;">Sell NFT</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="gradient-bar"></div>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-10"> <!-- 增加列宽度 -->
+                    <div class="overlay-box"> <!-- 添加的div，用于背景框 -->
+                        <h2 class="mx-auto my-0 text-uppercase" style="font-weight: 800;">What is Meta-print</h2>
+                        <br>
+                        <p class="text-white-50"
+                            style="text-align: center; margin: 0 auto; max-width: 1600px; line-height: 1.5; font-size: 1.25rem;">
+                            Metaprint is a pioneering project that transforms 3D data into NFTs and converts these NFTs
+                            into physical artworks through 3D printing. By merging digital and physical art, Metaprint
+                            offers innovative forms of artistic expression and interaction.
+                            <br><br>
+                            <br>
+                            This unique platform enhances the value and significance of digital assets, providing
+                            artists
+                            and collectors with a seamless bridge between the virtual and real worlds.
+
+                            The theme is open source, and you can use it for any purpose, personal or commercial.
+                        </p>
+                    </div> <!-- 关闭overlay-box -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="gradient-bar"></div>
+    <!-- Projects-->
+
+    <div class="background-section">
+
+        <div class="content-container">
+            <div class="panel">
+                <h2 style="font-weight: 800;">Buy NFT</h2>
+                <p class="text-white-50"
+                    style="text-align: center; margin: 0 auto; max-width: 1600px; line-height: 1.5; font-size: 1.1rem;">
+                    On Metaprint, buying NFTs is easy and secure. Browse unique
+                    digital artworks, make your purchase, and optionally
+                    transform your NFT into a physical piece with our high-quality 3D printing service.
+                    Enjoy
+                    the best of both digital and
+                    physical worlds.</p>
+            </div>
+            <div class="panel">
+                <h2 style="font-weight: 800;">Sell NFT</h2>
+                <p class="text-white-50"
+                    style="text-align: center; margin: 0 auto; max-width: 1600px; line-height: 1.5; font-size: 1.1rem;">
+                    On Metaprint,Selling your NFTs is simple and
+                    rewarding.
+                    Upload your digital artwork, mint it as a unique NFT, and list
+                    it on our marketplace. Reach a global audience of collectors and enthusiasts,
+                    and
+                    enhance your art’s value by offering
+                    the option to transform it into a physical piece with our 3D printing service.</p>
+            </div>
+        </div>
+    </div>
+    <div class="gradient-bar"></div>
+
+    <!-- Contact-->
+    <section class="contact-section bg-black">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-8 mb-3 text-center">
+                    <h2 class="text-white text-uppercase" style="font-size: 3rem; font-weight: 700;">TO CONTACT US</h2>
+                    <hr class="my-4 mx-auto" />
+                </div>
+            </div>
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt fa-2x mb-3" style="color: black;"></i>
+                            <h4 class="text-uppercase m-0" style="font-size: 1.5rem;">Address</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50" style="font-size: 1.0rem;">4-chōme-5-9 NipponbashiNaniwa
+                                Ward, Osaka, 556-0005
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope fa-2x mb-3" style="color: black;"></i>
+                            <h4 class="text-uppercase m-0" style="font-size: 1.5rem;">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50" style="font-size: 1.0rem;">metaprint100@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt fa-2x mb-3" style="color: black;"></i>
+                            <h4 class="text-uppercase m-0" style="font-size: 1.5rem;">Phone</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50" style="font-size: 1.0rem;">xxxxxxxxx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="#!"><i class="fa-brands fa-twitter"></i></a>
+                <a class="mx-2" href="#!"><i class="fa-brands fa-facebook"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <!--<div class="container px-4 px-lg-5">Copyright &copy; Your Website 2023</div>-->
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <div class="gradient-bar"></div>
+</body1>
+
+
+
+
+
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Meta-print</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+<link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="css/styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMqawH/1OBztoPRBxAMiIL89avWyp7YfRWvJ2Or" crossorigin="anonymous">
+
+<!-- Other head content -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p+pbmPbYxM1q7rKfu8fz5v4+3BSB2KJeWEchxgVKB6F7dOEx0d/7NY0YcDA5a6+m71ZUpgP6L7Pp5jz6cGL7Qg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    .masthead {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .masthead::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        /* 使覆盖层完全透明 */
+        z-index: -1;
+    }
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(1.0);
+        /* 增加视频亮度 */
+    }
+
+    .cropped-image {
+        width: 100%;
+        /* 设置图片的宽度 */
+        height: 200px;
+        /* 设置图片的高度 */
+        object-fit: cover;
+        /* 保持图片的宽高比并裁剪图片以填充容器 */
+        object-position: center;
+        /* 聚焦显示图片的中间部分 */
+    }
+
+    .about-section {
+        background-image: url('assets/img/ipad1.jpg');
+        /* 设置背景图片路径 */
+        background-size: cover;
+        /* 使背景图片覆盖整个区域 */
+        background-position: center;
+        /* 确保背景图片居中 */
+        background-repeat: no-repeat;
+        /* 避免背景图片重复 */
+        color: white;
+        /* 确保文字在图片上可见 */
+        padding: 120px 0;
+        /* 设置上下内边距，使内容有足够的间距 */
+    }
+
+
+
+    .gradient-bar {
+        width: 100%;
+        /* 设定宽度，可以根据需要调整 */
+        height: 20px;
+        /* 设定高度，可以根据需要调整 */
+        background: linear-gradient(to right, #4A90E2, #50E3C2, #B8E986, #F8E71C);
+        /* 从左到右的渐变颜色 */
+        border-top: 1px solid #333;
+        /* 顶部边框 */
+        border-bottom: 1px solid #333;
+        /* 底部边框 */
+    }
+
+    .overlay-box {
+        background-color: rgba(0, 0, 0, 0.7);
+        /* 半透明黑色背景 */
+        padding: 40px;
+        /* 增加内边距，控制框的大小 */
+        border-radius: 8px;
+        /* 圆角 */
+        color: #fff;
+        /* 白色文字，确保在黑色背景上可见 */
+        max-width: 1400px;
+        /* 增加框的最大宽度，调整为1400px或你需要的值 */
+        margin: 0 auto;
+        /* 居中对齐 */
+    }
+
+    .background-section {
+        background-image: url('assets/img/2.jpg');
+        /* 替换为你的图片路径 */
+        background-size: cover;
+        /* 使背景图片覆盖整个容器 */
+        background-position: center -80px;
+        /* 背景图片从顶部开始显示 */
+        background-repeat: no-repeat;
+        /* 防止图片重复 */
+        height: 100vh;
+        /* 确保背景填满整个容器高度 */
+        display: flex;
+        flex-direction: column;
+        /* 垂直布局 */
+        justify-content: center;
+        /* 垂直居中对齐 */
+        align-items: center;
+        /* 水平居中对齐 */
+        padding: 20px;
+        box-sizing: border-box;
+        /* 包含内边距在高度计算中 */
+    }
+
+    .main-title {
+        font-size: 36px;
+        color: #fff;
+        /* 标题使用白色，与背景形成对比 */
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* 添加阴影效果让标题更突出 */
+        width: 100%;
+        /* 确保标题占据整个宽度以便居中 */
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        /* 调整容器宽度，根据需要修改 */
+        margin-top: 330px;
+        /* 让内容与标题之间有更多间距，框子往下移动 */
+    }
+
+    .panel {
+        background-color: rgba(0, 0, 0, 0.8);
+        /* 黑色半透明背景，确保内容可见 */
+        padding: 30px;
+        width: 45%;
+        /* 设定每个 div 的宽度 */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        /* 添加更明显的阴影效果 */
+        border-radius: 12px;
+        /* 更大的圆角边框 */
+        text-align: center;
+        /* 让文本居中 */
+    }
+
+    .panel h2 {
+        font-size: 24px;
+        color: #fff;
+        /* 标题使用白色，与黑色背景形成对比 */
+        margin-bottom: 20px;
+    }
+
+    .panel p {
+        font-size: 16px;
+        color: #ccc;
+        /* 浅灰色文本，与黑色背景形成对比 */
+        line-height: 1.6;
+    }
+
+    .btn-custom {
+        padding: 15px 30px;
+        /* 内边距，按钮更大 */
+        font-size: 1.5rem;
+        /* 字体大小 */
+        border-radius: 8px;
+        /* 方形按钮带有轻微圆角 */
+        background: linear-gradient(90deg, #4CAF50, #1E90FF);
+        /* 绿色到蓝色的渐变 */
+        border: none;
+        /* 去掉边框 */
+        color: white;
+        /* 字体颜色 */
+        font-weight: bold;
+        /* 加粗字体 */
+        text-transform: uppercase;
+        /* 字母大写 */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        /* 阴影效果 */
+        transition: all 0.3s ease;
+        /* 平滑的过渡效果 */
+    }
+
+    .btn-custom:hover {
+        background: linear-gradient(90deg, #3e8e41, #007acc);
+        /* 悬停时更深的渐变 */
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        /* 加深阴影效果 */
+        transform: translateY(-2px);
+        /* 悬停时上移 */
+    }
+
+    .gradient-bar {
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(to right, #007AFF, #4CD964, #FFCC00, #FF3B30);
+        /* 使用更鲜艳的颜色 */
+        border-top: 1px solid #222;
+        /* 顶部边框颜色加深 */
+        border-bottom: 1px solid #222;
+        /* 底部边框颜色加深 */
+    }
+
+    .gradient-text {
+        background: linear-gradient(to right, #007AFF, #4CD964, #FFCC00);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: inherit;
+        /* 继承外部的字体大小 */
+    }
+
+    .background-color {
+        background: linear-gradient(135deg, #36454f 0%, #2b2f33 100%);
+    }
+</style>
+
+<body1 id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">
+                <img src='assets/img/1.svg' alt="Logo" style="height: 30px; margin-right: 10px;">
+
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about" style="font-weight: 700;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" style="font-weight: 700;">Buy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup" style="font-weight: 700;">Sell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup" style="font-weight: 700;">Connect Wallet</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <header class="background-color" style="padding-top: 6rem; padding-bottom: 6rem;">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder gradient-text" style="font-size: 4rem;">NFT ON SELL</h1>
+                <p class="lead fw-normal  mb-0 gradient-text" style="font-size: 1.5rem;">Unlock Your
+                    Creativity—Own Exclusive 3D Print Designs as
+                    NFTs Today!</p>
+                <div id="balance" class="balance-display"></div>
+            </div>
+        </div>
+    </header>
+    <div class="gradient-bar"></div>
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+                id="product-list">
+                <!-- Product cards will be inserted here by JavaScript -->
+            </div>
+            <nav>
+                <ul class="pagination justify-content-center" id="pagination">
+                    <!-- Pagination buttons will be inserted here by JavaScript -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+    <script>
+        const productList = document.getElementById('product-list');
+        const pagination = document.getElementById('pagination');
+        const productsPerPage = 8;
+        const totalProducts = 100;
+
+        const productCardHTML = `
+        <div class="col mb-5">
+            <div class="card h-100">
+                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                <!-- Product image -->
+                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                <!-- Product details -->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name -->
+                        <h5 class="fw-bolder">Product name</h5>
+                        <!-- Product price -->
+                        $40.00 - $80.00
+                    </div>
+                </div>
+                <!-- Product actions -->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Buy</a></div>
+                </div>
+            </div>
+        </div>
+        `;
+
+
+
+
+
+        const products = [];
+        for (let i = 0; i < totalProducts; i++) {
+            products.push(productCardHTML);
+        }
+
+        // Function to display a specific page of products
+        function displayPage(page) {
+            productList.innerHTML = '';
+            const start = (page - 1) * productsPerPage;
+            const end = start + productsPerPage;
+            const pageProducts = products.slice(start, end);
+            pageProducts.forEach(product => productList.innerHTML += product);
+        }
+
+        // Function to setup pagination
+        function setupPagination(totalProducts, productsPerPage, currentPage) {
+            const totalPages = Math.ceil(totalProducts / productsPerPage);
+            pagination.innerHTML = '';
+
+            const createPageItem = (text, page) => {
+                const li = document.createElement('li');
+                li.className = 'page-item';
+                if (page === currentPage) {
+                    li.classList.add('active');
+                }
+                const a = document.createElement('a');
+                a.className = 'page-link';
+                a.href = '#';
+                a.textContent = text;
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPage(page);
+                    setupPagination(totalProducts, productsPerPage, page); // Refresh pagination
+                });
+                li.appendChild(a);
+                return li;
+            };
+
+            // Create pagination with ellipses
+            if (currentPage > 1) {
+                pagination.appendChild(createPageItem('First', 1)); // First button
+            }
+            if (currentPage > 3) {
+                const ellipsis = document.createElement('li');
+                ellipsis.className = 'page-item';
+                ellipsis.innerHTML = '<span class="page-link">...</span>';
+                pagination.appendChild(ellipsis);
+            }
+            for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
+                pagination.appendChild(createPageItem(i, i));
+            }
+            if (currentPage < totalPages - 2) {
+                const ellipsis = document.createElement('li');
+                ellipsis.className = 'page-item';
+                ellipsis.innerHTML = '<span class="page-link">...</span>';
+                pagination.appendChild(ellipsis);
+            }
+            if (currentPage < totalPages) {
+                pagination.appendChild(createPageItem('Last', totalPages)); // Last button
+            }
+        }
+
+        // Initialize first page and pagination
+        displayPage(1);
+        setupPagination(totalProducts, productsPerPage, 1);
+    </script>
+
+
+
+    </body>
+
+</html>
+
+
+<!-- Masthead-->
